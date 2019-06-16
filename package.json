@@ -1,0 +1,42 @@
+{
+  "name": "eSchool",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "PK",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-animate": "^1.5.2",
+    "angular-route": "^1.5.2",
+    "angular-ui-bootstrap": "^1.2.5",
+    "aws": "0.0.3-2",
+    "aws-sdk": "^2.476.0",
+    "bcrypt": "*",
+    "bluebird": "*",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^4.3.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "font-awesome": "^4.5.0",
+    "i18n": "^0.8.3",
+    "moment": "^2.24.0",
+    "ng-tags-input": "^3.0.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^4.5.1",
+    "pg-promise": "^8.7.2",
+    "sendgrid": "^2.0.0"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.12.1"
+  }
+}

@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div><h3 translate="Manage_Users"></h3></div>
+            <div class="form-group"><label for="selectedName" translate="Existing_Users"></label>
+                <select class="form-control" ng-model="selectedName" ng-options="person.users_id as person.last_name + ', ' + person.first_name for person in getNames" ng-change="getInfo()">Select Person</select>
+           </div>
+            <div class="form-group"><label for="username" translate="Username">:</label><input class="form-control" type="text" ng-model="username"></div>
+
+            <div class="form-group">
+                <span>
+                    <label for="selectedRole" translate="Roles"></label>
+                    <select class="form-control" ng-change="checkRole()" ng-model="role" ng-options="role as item.tag_name for item in roles"></select>
+                </span>
+           </div>
+
+           <div class="form-group" ng-show="showGrade">
+                    <select class="form-control" type="text" ng-model="grade" ng-options="grade as tag.tag_name for tag in classifications"></select>
+           </div>
+
+
+<!--
+            <div class="radio"><label for="admin"><input class="resource_lesson_radio" type="radio" ng-model="role" value="admin"><span translate="Admin"></span></label></div>
+            <div class="radio"><label for="teacher"><input class="resource_lesson_radio" type="radio" ng-model="role" value="teacher"><span translate="Teacher"></span></label></div>
+            <div class="radio"><label for="student"><input class="resource_lesson_radio" type="radio" ng-model="role" value="student"><span translate="Student"></label></div>
+-->
+
+            <div class="form-group"> 
+              <span>
+                <label for="first_name"><span translate="First_Name"></span>:</label><input class="form-control" type="text" ng-model="first_name">
+                <label for="last_name"><span translate="Last_Name"></span>:</label><input class="form-control" type="text" ng-model="last_name">
+              </span>
+            </div>
+
+            <div class="form-group"><label for="phone"><span translate="Phone"></span>:</label><input class="form-control" type="text" ng-model="phone"></div>
+            <div class="form-group">
+                <label for="grade"><span translate="Grade"></span>:</label>
+                <select class="form-control" type="text" ng-model="grade" ng-options="grade as tag.tag_name for tag in classifications"></select>
+            </div>
+            <div> <span><button class="btn btn-primary" type="button" ng-click="saveUser()" translate="BTN_SUBMIT"></button>
+            <button class="btn btn-danger" type="button" ng-click="removeUser()" translate="BTN_REMOVE"></button></span>
+            </div>
+        </div>
+
+        <div class="col-md-7 col-md-offset-1">
+            <img src="/images/eschool_transparent_logo.png" width="400px" class="register_page_logo" />
+        </div>
+    </div>
+</div>
+
+<!--modal for when no tags are added-->
+<script type="text/ng-template" id="modalRemoveUser.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Remove user?</h3>
+        <h2>{{username}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <button class="btn btn-primary" type="button" ng-click="okay()">Okay</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

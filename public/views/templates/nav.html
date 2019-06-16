@@ -1,0 +1,27 @@
+<nav class="container" ng-controller="NavController">
+    <ul class="nav nav-tabs">
+        <li>
+            <center>
+                <img src="../images/en.jpg" alt="English" height="30" width="30" ng-click="setLang('en')">
+                <img src="../images/jp.jpg" alt="日本語" height="30" width="30" ng-click="setLang('jp')">
+<!--
+                <li><a href="" ng-click="setLang('jp')">日本語</a></li>
+                <li><a href="" ng-click="setLang('en')">English</a></li>
+-->
+            </center>
+        </li>
+        <li ng-if="adminEditState"><a href="#admin_dash" translate="MENU_HOME">Home</a></li>
+        <li ng-if="teacherEditState"><a href="#teacher_dash" translate="MENU_HOME"></a></li>
+        <li ng-if="studentEditState"><a href="#student_dash" translate="MENU_HOME"></a></li>
+
+        <li ng-if="teacherEditState"><a href="#lesson_plan" ng-click="reloadRoute()" translate="MENU_LESSON_MGMT"></a></li>
+        <li ng-if="adminEditState"><a href="#lesson_plan" ng-click="reloadRoute()" translate="MENU_LESSON_MGMT"></a></li>
+
+        <li ng-if="adminEditState"><a href="#register" translate="MENU_USER_MGMT"></a></li>
+        <li ng-if="adminEditState"><a href="#schedule_plan" translate="MENU_SCHEDULE_MGMT"></a></li>
+        <li ng-if="studentEditState"><a href="#schedule_plan" translate="MENU_MY_SCHEDULE"></a></li>
+        <li ng-if="adminEditState"><a href="#search" translate="MENU_SEARCH"></a></li>
+        <li ng-if="teacherEditState"><a href="#search" translate="MENU_SEARCH"></a></li>
+        <li ng-if="loggedIn"><a href="" ng-click="logout()" translate="MENU_LOGOUT"></a></li>
+    </ul>
+</nav>

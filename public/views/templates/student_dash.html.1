@@ -1,0 +1,109 @@
+<div class="container col-md-12">
+    <div class="col-md-12 heading">
+        <h3>Welcome {{loggedInUser.first_name}} {{loggedInUser.last_name}}</h3>
+    </div>
+
+    <div class="col-md-3 favorites-lesson-plans">
+        <h3>My favorites <i class="fa small-blue fa-star"></i></h3>
+        <table class="table">
+            <thead><tr>
+            <th>Title</th>
+            <th>Author</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="plan in favoritePlans">
+            <tr>
+            <td>{{plan.title}}</td>
+            <td>{{plan.author}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-9 lessons-created-by-user">
+        <h3>My Lesson Plan</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>09:00-10:00</th>
+                <th>10:00-11:00</th>
+                <th>11:00-12:00</th>
+                <th>12:00-13:00</th>
+                <th>13:00-14:00</th>
+                <th>14:00-15:00</th>
+                <th>15:00-16:00</th>
+                <th>16:00-17:00</th>
+            </thead>
+            <tbody ng-repeat="schedule in schedules">
+            <tr>
+                <td>{{schedule.scheduled_date}}</td>
+                <td>
+                    <div ng-if="schedule.nine_ten==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 0, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.nine_ten!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 0, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.ten_eleven==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 1, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.ten_eleven!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 1, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.eleven_twelve==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 2, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.eleven_twelve!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 2, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.twelve_thirteen==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 3, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.twelve_thirteen!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 3, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.thirteen_fourteen==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 4, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.thirteen_fourteen!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 4, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.fourteen_fifteen==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 5, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.fourteen_fifteen!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 5, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.fifteen_sixteen==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 6, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.fifteen_sixteen!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 6, false)">Booked</button>
+                    </div>
+                </td>
+                <td>
+                    <div ng-if="schedule.sixteen_seventeen==''">
+                        <button class="select-lesson-btn btn btn-primary" ng-click="editClickedSchedule($index, 7, true)">Select</button>
+                    </div>
+                    <div ng-if="schedule.sixteen_seventeen!=''">
+                        <button class="select-lesson-btn btn btn-default" ng-click="editClickedSchedule($index, 7, false)">Booked</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div class="login-logo-box">
+        <div class="logo">
+            <img src="/images/eschool_logo.png" height="100px">
+        </div>
+          <div ng-show="error" class="alert alert-danger">{{err}}</div>
+        <form class="login">
+            <input type="text" class="form-control" ng-model="username" placeholder="{{'TXT_USERID' | translate}}" autofocus="" />
+            <input type="password" class="form-control login-password-field" ng-model=password placeholder="{{'TXT_PASSWD' | translate}}"  />
+            <button class="btn btn-lg btn-primary btn-block login-button" ng-click="loginUser(username, password)" type="submit" translate="BTN_LOGIN"</button>
+<!--
+            <button class="btn login-password-field btn-danger" ng-click="go('/reset')">Forgot Password</button>
+-->
+        </form>
+    </div>
+</div>
+
+
