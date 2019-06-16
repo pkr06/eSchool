@@ -3,16 +3,17 @@ An app to manage and maintain lessons, teacher and student schedule.
 The version commited is an intermediate version of the project, a lot of work needs to be done to complete the project.
 
 Features:
-Supports two languages English and Japanese
-Three roles - Admin, Teacher, Student
-Manages course
-Manages Schedule - student can choose their schedule
+..*Supports two languages English and Japanese
+..*Three roles - Admin, Teacher, Student
+..*Manages course
+..*Manages Schedule - student can choose their schedule
+..*Search
 
-Stack
-Node.js
-Angular (older version)
-Postgresql
-Deployed on Heroku
+Stack:
+..*Node.js
+..*Angular (older version)
+..*Postgresql
+..*Deployed on Heroku
 
 Screen shots:
 1. Login Screen
